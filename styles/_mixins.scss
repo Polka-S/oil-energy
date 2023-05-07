@@ -1,0 +1,64 @@
+$minWidth: 320;
+$maxWidth: 1920;
+$minWidthForHeader: 1100;
+
+
+@mixin adaptive-any($property, $minSize, $maxSize, $unit, $important: false) {
+    $factor: ($maxSize - $minSize) / ($maxWidth - $minWidth);
+    $minSizeUnit: #{$minSize + $unit};
+
+    @if $important {
+        #{$property}: calc($minSizeUnit + $factor * (100vw - #{($minWidth + px)})) !important;
+        
+        @media (min-width: #{$maxWidth + px}) {
+            #{$property}: #{$maxSize + $unit} !important;
+        }
+    
+        @media (max-width: #{$minWidth + px}) {
+            #{$property}: #{$minSize + $unit} !important;
+        }
+    }
+    @else {
+        #{$property}: calc($minSizeUnit + $factor * (100vw - #{($minWidth + px)}));
+
+        @media (min-width: #{$maxWidth + px}) {
+            #{$property}: #{$maxSize + $unit};
+        }
+    
+        @media (max-width: #{$minWidth + px}) {
+            #{$property}: #{$minSize + $unit};
+        }
+    }
+
+    
+}
+
+@mixin adaptive-any-header($property, $minSize, $maxSize, $unit, $important: false) {
+    $factor: ($maxSize - $minSize) / ($maxWidth - $minWidthForHeader);
+    $minSizeUnit: #{$minSize + $unit};
+
+    @if $important {
+        #{$property}: calc($minSizeUnit + $factor * (100vw - #{($minWidthForHeader + px)})) !important;
+        
+        @media (min-width: #{$maxWidth + px}) {
+            #{$property}: #{$maxSize + $unit} !important;
+        }
+    
+        @media (max-width: #{$minWidthForHeader + px}) {
+            #{$property}: #{$minSize + $unit} !important;
+        }
+    }
+    @else {
+        #{$property}: calc($minSizeUnit + $factor * (100vw - #{($minWidthForHeader + px)}));
+
+        @media (min-width: #{$maxWidth + px}) {
+            #{$property}: #{$maxSize + $unit};
+        }
+    
+        @media (max-width: #{$minWidthForHeader + px}) {
+            #{$property}: #{$minSize + $unit};
+        }
+    }
+
+    
+}
