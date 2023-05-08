@@ -1,0 +1,20 @@
+.wrapper-slogan {
+    background: url(../images/slogan/bg_slogan.jpg) no-repeat center center;
+    margin-bottom: 75px;
+}
+
+.slogan {
+    text-align: center;
+
+    &__heading {
+        padding: 150px 150px;
+        color: $white-color;
+        text-transform: uppercase;
+    }
+}
+
+@media (max-width: 940px) {
+    .slogan__heading {
+        padding: 43px 20px;
+    }
+}

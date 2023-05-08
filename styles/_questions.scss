@@ -1,0 +1,12 @@
+.questions {
+    &__heading {
+        @include adaptive-any(margin-bottom, 30, 66, px);
+    }
+
+    &__text {
+        @include adaptive-any(margin-bottom, 35, 70, px);
+        @include adaptive-any(font-size, 16, 22, px);
+        @include adaptive-any(margin-bottom, 20, 30, px);
+        font-weight: 400;
+    }
+}

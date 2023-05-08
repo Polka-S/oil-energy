@@ -1,0 +1,196 @@
+.contacts {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    @include adaptive-any(margin-bottom, 25, 100, px);
+
+
+    &__write {
+        flex-grow: 2;
+
+        &-heading {
+            @include adaptive-any(margin-bottom, 65, 95, px);
+        }
+    }
+
+    &__form {
+        &-row {
+            display: flex;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            // margin-bottom: 80px;
+            @include adaptive-any(margin-bottom, 60, 80, px);
+
+
+            &-name,
+            &-tel {
+                width: 40%;
+                // flex-grow: 1;
+            }
+
+            &-tel {
+                margin-left: 40px;
+            }
+
+            &-name-inp,
+            &-tel-inp {
+                width: 100%;
+                height: 60px;
+            }
+        }
+
+        &-email {
+            // margin-bottom: 80px;
+            @include adaptive-any(margin-bottom, 60, 80, px);
+        }
+
+        &-message {
+            margin-bottom: 57px;
+
+            &-inp {
+                resize: none;
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+        }
+
+        &-submit {
+            &-btn {
+                @include buttons;
+                background-color: $orange-btns-color;
+                border: 1px solid $orange-btns-color;
+            }
+
+            &-btn:hover {
+                color: $orange-btns-color;
+                background: $white-color;
+            }
+        }
+    }
+
+    &__call {
+        // @include adaptive-any(margin-left, 0, 240, px);
+        flex-grow: 1;
+
+        &-heading {
+            @include adaptive-any(margin-bottom, 20, 50, px);
+        }
+
+        &-card {
+            margin-bottom: 45px;
+            font-weight: 400;
+            @include adaptive-any(font-size, 18, 22, px);
+            @include adaptive-any(line-height, 25, 30, px);
+
+            &-name {
+                color: $orange-btns-color;
+            }
+
+            &-tel-link,
+            &-email-link {
+                color: $black-color;
+                transition: box-shadow .5s ease;
+                // padding: 4px;
+            }
+
+            &-tel-link:hover,
+            &-email-link:hover {
+                // color: $orange-btns-color;
+                box-shadow: inset 0 15px 0 0 $orange-btns-color;
+            }
+
+            &-name,
+            &-tel {
+                margin-bottom: 9px;
+            }
+        }
+    }
+}
+
+.form-block {
+    position: relative;
+
+    .form-lab {
+        position: absolute;
+        top: -30px;
+        left: 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        color: $black-color;
+    }
+}
+
+.form-inp {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    padding: 18px 30px;
+    color: $black-color;
+    border: 1px solid $gray-color;
+    border: 1px solid #D9D9D9;
+    border-radius: 10px;
+}
+
+.form-inp::placeholder {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 25px;
+    color: $gray-color-placeholder;
+    transition: all .5s ease;
+}
+
+.form-inp:focus::placeholder {
+    opacity: 0.5;
+}
+
+.form-inp:focus {
+    outline: none;
+}
+
+#email,
+#message {
+    width: 84%;
+}
+
+@media (max-width: 860px) {
+
+    .contacts__form-row-name,
+    .contacts__form-row-tel {
+        width: 47.5%;
+    }
+
+    .contacts__form-row-name-inp,
+    .contacts__form-row-tel-inp,
+    #email,
+    #message {
+        width: 100%;
+    }
+}
+
+@media (max-width: 840px) {
+
+    .contacts__form-row-name,
+    .contacts__form-row-tel,
+    .contacts__form-row-name-inp,
+    .contacts__form-row-tel-inp,
+    .contacts__write,
+    .contacts__call,
+    .contacts__form-submit-btn,
+    #email,
+    #message {
+        width: 100%;
+    }
+
+    .contacts__form-row-tel {
+        margin-left: 0;
+    }
+
+    .contacts__form-row-name {
+        margin-bottom: 60px;
+    }
+
+    .contacts__form-submit {
+        margin-bottom: 35px;
+    }
+}

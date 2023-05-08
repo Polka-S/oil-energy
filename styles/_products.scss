@@ -1,0 +1,56 @@
+.products {
+
+    &__heading {
+        margin-bottom: 90px;
+    }
+
+    &__cards {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: 70px;
+
+        &-box {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 30px;
+
+            &-picture {
+                margin-bottom: 35px;
+                text-align: center;
+
+                &-img {
+                    @include adaptive-any(height, 200, 300, px);
+                    @include adaptive-any(width, 200, 300, px);
+                }
+            }
+
+            &-title {
+                margin-bottom: 50px;
+                @include text-14;
+            }
+
+            &-form-btn {
+                @include buttons;
+                border: 1px solid $orange-btns-color;
+                background: $orange-btns-color;
+            }
+
+            &-form-btn:hover {
+                color: $orange-btns-color;
+                background: $white-color;
+                border: 1px solid $orange-btns-color;
+            }
+        }
+    }
+}
+
+.nth-child-two {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 940px) {
+    .products__cards {
+        justify-content: space-around;
+    }
+}

@@ -1,0 +1,58 @@
+.wrapper-build {
+    background: url(../images/build/bg_build.jpg) no-repeat center center;
+    margin-bottom: 75px;
+}
+
+.build {
+    padding: 74px 240px 100px;
+
+    &__heading {
+        @include adaptive-any(margin-bottom, 24, 86, px);
+    }
+
+    &__more {
+        &-text {
+            font-weight: 400;
+            color: $white-color;
+            @include adaptive-any(margin-bottom, 11, 47, px);
+            @include adaptive-any(font-size, 22, 32, px);
+            @include adaptive-any(line-height, 30, 40, px);
+        }
+
+        &-btn {
+            @include buttons;
+            border: 1px solid $red-color;
+            background: $red-color;
+        }
+
+        &-btn:hover {
+            color: $red-color;
+            background: $white-color;
+        }
+    }
+}
+
+.build__row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 940px) {
+    .build__row {
+        justify-content: space-around;
+    }
+
+    .build__more {
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .build__more-btn {
+        display: block;
+        width: 100%;
+    }
+}

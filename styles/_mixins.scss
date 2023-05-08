@@ -9,28 +9,29 @@ $minWidthForHeader: 1100;
 
     @if $important {
         #{$property}: calc($minSizeUnit + $factor * (100vw - #{($minWidth + px)})) !important;
-        
+
         @media (min-width: #{$maxWidth + px}) {
             #{$property}: #{$maxSize + $unit} !important;
         }
-    
+
         @media (max-width: #{$minWidth + px}) {
             #{$property}: #{$minSize + $unit} !important;
         }
     }
+
     @else {
         #{$property}: calc($minSizeUnit + $factor * (100vw - #{($minWidth + px)}));
 
         @media (min-width: #{$maxWidth + px}) {
             #{$property}: #{$maxSize + $unit};
         }
-    
+
         @media (max-width: #{$minWidth + px}) {
             #{$property}: #{$minSize + $unit};
         }
     }
 
-    
+
 }
 
 @mixin adaptive-any-header($property, $minSize, $maxSize, $unit, $important: false) {
@@ -39,26 +40,48 @@ $minWidthForHeader: 1100;
 
     @if $important {
         #{$property}: calc($minSizeUnit + $factor * (100vw - #{($minWidthForHeader + px)})) !important;
-        
+
         @media (min-width: #{$maxWidth + px}) {
             #{$property}: #{$maxSize + $unit} !important;
         }
-    
+
         @media (max-width: #{$minWidthForHeader + px}) {
             #{$property}: #{$minSize + $unit} !important;
         }
     }
+
     @else {
         #{$property}: calc($minSizeUnit + $factor * (100vw - #{($minWidthForHeader + px)}));
 
         @media (min-width: #{$maxWidth + px}) {
             #{$property}: #{$maxSize + $unit};
         }
-    
+
         @media (max-width: #{$minWidthForHeader + px}) {
             #{$property}: #{$minSize + $unit};
         }
     }
 
-    
+
+}
+
+@mixin text-14 {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 30px;
+}
+
+@mixin buttons {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    text-transform: uppercase;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    @include adaptive-any(padding-left, 19, 39, px);
+    @include adaptive-any(padding-right, 19, 39, px);
+    border-radius: 10px;
+    color: $white-color;
+    border: none;
+    cursor: pointer;
 }
