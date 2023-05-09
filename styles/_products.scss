@@ -1,14 +1,17 @@
 .products {
 
     &__heading {
-        margin-bottom: 90px;
+        @include adaptive-any(margin-bottom, 45, 90, px);
+
     }
 
     &__cards {
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-        margin-bottom: 70px;
+        // margin-bottom: 70px;
+        @include adaptive-any(margin-bottom, 30, 70, px);
+
 
         &-box {
             display: flex;
@@ -16,7 +19,9 @@
             margin-bottom: 30px;
 
             &-picture {
-                margin-bottom: 35px;
+                // margin-bottom: 35px;
+                @include adaptive-any(margin-bottom, 10, 35, px);
+
                 text-align: center;
 
                 &-img {
@@ -26,7 +31,9 @@
             }
 
             &-title {
+                // @include adaptive-any(margin-bottom, 15, 50, px);
                 margin-bottom: 50px;
+
                 @include text-14;
             }
 
@@ -47,10 +54,19 @@
 
 .nth-child-two {
     margin-bottom: 20px;
+    // @include adaptive-any(margin-bottom, 10, 9, px);
 }
 
 @media (max-width: 940px) {
     .products__cards {
         justify-content: space-around;
+    }
+}
+
+@media (max-width:551px) {
+
+    .products__cards-box-title,
+    .nth-child-two {
+        margin-bottom: 15px;
     }
 }

@@ -10,6 +10,7 @@
 @import "build";
 @import "questions";
 @import "contacts";
+@import "footer";
 
 
 body {
@@ -45,12 +46,19 @@ h2.light {
     color: $white-color;
 }
 
-h4 {
+h3 {
     font-weight: 700;
     text-transform: uppercase;
     @include adaptive-any(font-size, 16, 18, px);
     @include adaptive-any(line-height, 20, 25, px);
     @include adaptive-any(margin-bottom, 25, 55, px);
+}
+
+h4 {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .container {
@@ -78,7 +86,7 @@ h4 {
     transition: background 1s ease, color .5s ease;
 }
 
-.form-inp-animation{
+.form-inp-animation {
     transition: all .5s ease;
 }
 

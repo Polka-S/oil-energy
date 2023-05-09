@@ -1,6 +1,7 @@
 .wrapper-slogan {
     background: url(../images/slogan/bg_slogan.jpg) no-repeat center center;
-    margin-bottom: 75px;
+    // margin-bottom: 75px;
+    @include adaptive-any(margin-bottom, 30, 75, px);
 }
 
 .slogan {

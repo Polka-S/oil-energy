@@ -1,10 +1,14 @@
 .wrapper-build {
     background: url(../images/build/bg_build.jpg) no-repeat center center;
-    margin-bottom: 75px;
+        @include adaptive-any(margin-bottom, 30, 70, px);
 }
 
 .build {
-    padding: 74px 240px 100px;
+
+    @include adaptive-any(padding-top, 30, 74, px);
+    @include adaptive-any(padding-right, 20, 240, px);
+    @include adaptive-any(padding-bottom, 30, 240, px);
+    @include adaptive-any(padding-left, 20, 100, px);
 
     &__heading {
         @include adaptive-any(margin-bottom, 24, 86, px);

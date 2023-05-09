@@ -10,8 +10,6 @@ function burgerHandler(e) {
     burger.classList.toggle("active");
     body.classList.toggle("noscroll");
     renderPopup();
-    renderPopupTwo();
-    checkLinks();
 }
 
 function renderPopup() {
