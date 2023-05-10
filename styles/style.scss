@@ -17,6 +17,10 @@ body {
     font-family: 'Century Gothic', serif;
 }
 
+body.noscroll {
+    overflow: hidden;
+}
+
 h1,
 h2 {
     font-weight: 700;
